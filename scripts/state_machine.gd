@@ -11,6 +11,7 @@ func _init(parent, initial_state, animator, states):
 	_animator = animator
 	
 	for state in states.values():
+		print(state)
 		initialize_state(state)
 	
 	change_state(initial_state)
