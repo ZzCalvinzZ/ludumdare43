@@ -173,7 +173,7 @@ MOVE_SPEED = 250
 texture = ExtResource( 2 )
 vframes = 9
 hframes = 6
-frame = 31
+frame = 1
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
