@@ -1,10 +1,14 @@
 extends Node
 
 export (PackedScene) var Enemy1
+export (PackedScene) var Hero
 
 func _ready():
 	randomize()
 	$SpawnTimer.start()
+	var hero = Hero.instance()
+	add_child(hero)
+	
 
 func _process(delta):
 	pass
