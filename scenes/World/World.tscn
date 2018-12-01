@@ -11,11 +11,10 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 31.3197, 34.677, 0, 0, 0, 0, 984.942, 37.3978, 0, 0, 0, 0, 989.023, 567.944, 0, 0, 0, 0, 32.6801, 570.664, 0, 0, 0, 0, 31.3197, 34.677 )
 }
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 Enemy1 = ExtResource( 2 )
-Hero = ExtResource( 3 )
 
 [node name="EnemyPath" type="Path2D" parent="." index="0"]
 
@@ -41,6 +40,8 @@ wait_time = 5.0
 one_shot = false
 autostart = false
 _sections_unfolded = [ "Pause" ]
+
+[node name="hero" parent="." index="2" instance=ExtResource( 3 )]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 

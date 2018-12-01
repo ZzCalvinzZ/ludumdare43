@@ -1,20 +1,26 @@
 extends Node
 
 export (PackedScene) var Enemy1
-export (PackedScene) var Hero
+
+var enemies = []
+var hero
 
 func _ready():
 	randomize()
 	$SpawnTimer.start()
-	var hero = Hero.instance()
-	add_child(hero)
-	
 
 func _process(delta):
+	hero = $hero
+
+	for enemy in enemies:
+		enemy.update_target(hero)
+
+func _physics_process(delta):
 	pass
 
 func _on_SpawnTimer_timeout():
 	$EnemyPath/EnemySpawn.set_offset(randi())
 	var enemy = Enemy1.instance()
+	enemies.append(enemy)
 	add_child(enemy)
 	enemy.position = $EnemyPath/EnemySpawn.position
