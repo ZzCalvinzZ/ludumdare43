@@ -26,6 +26,7 @@ tracks/0/keys = {
 [node name="TitleScreen" type="Node" index="0"]
 
 script = ExtResource( 1 )
+cutoff_multiplier = 50
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
