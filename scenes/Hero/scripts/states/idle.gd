@@ -4,7 +4,7 @@ var player
 
 func ready():
 	player = self._parent
-	set_animation("idle_left")
+	set_animation(player.next_idle)
 	
 func process(delta):
-	pass
+	set_animation(player.next_idle)
