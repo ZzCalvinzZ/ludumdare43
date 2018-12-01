@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Hero/Hero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -42,6 +43,8 @@ autostart = false
 _sections_unfolded = [ "Pause" ]
 
 [node name="hero" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="CharacterOverlay" parent="." index="3" instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
