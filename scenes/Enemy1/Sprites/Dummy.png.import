@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hero.png-d886566e2a11b076cf00ab789017b0fc.stex"
+path="res://.import/Dummy.png-2c328e42de3a0993ba337bf159302090.stex"
 
 [deps]
 
-source_file="res://scenes/Hero/sprites/hero.png"
-dest_files=[ "res://.import/hero.png-d886566e2a11b076cf00ab789017b0fc.stex" ]
+source_file="res://scenes/Enemy1/Sprites/Dummy.png"
+dest_files=[ "res://.import/Dummy.png-2c328e42de3a0993ba337bf159302090.stex" ]
 
 [params]
 
