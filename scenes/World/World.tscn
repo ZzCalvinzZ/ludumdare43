@@ -1,9 +1,45 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 31.3197, 34.677, 0, 0, 0, 0, 984.942, 37.3978, 0, 0, 0, 0, 989.023, 567.944, 0, 0, 0, 0, 32.6801, 570.664, 0, 0, 0, 0, 31.3197, 34.677 )
+}
 
 [node name="World" type="Node" index="0"]
 
 script = ExtResource( 1 )
+Enemy1 = ExtResource( 2 )
+
+[node name="EnemyPath" type="Path2D" parent="." index="0"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+
+[node name="EnemySpawn" type="PathFollow2D" parent="EnemyPath" index="0"]
+
+position = Vector2( 31.3197, 34.677 )
+rotation = 0.00285327
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="SpawnTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
 
