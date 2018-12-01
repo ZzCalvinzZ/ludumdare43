@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TitleMusic.ogg-abdbe09dcc52553056e9a18ebe116811.oggstr"
+
+[deps]
+
+source_file="res://scenes/TitleScreen/Music/TitleMusic.ogg"
+source_md5="c944593767418648fba12a944c8d8c8c"
+
+dest_files=[ "res://.import/TitleMusic.ogg-abdbe09dcc52553056e9a18ebe116811.oggstr" ]
+dest_md5="2228917cd33480db6f39def9de6f5d96"
+
+[params]
+
+loop=true
+loop_offset=0
