@@ -22,8 +22,12 @@ func change_state(new_state):
 	_state_machine.change_state(new_state)
 	
 func set_animation(animation, finished_state=null):
+	var old_animation = _animation
 	_animation = animation
 	self._animation_finished_state = finished_state
+	
+	if old_animation != _animation:
+		self.state_changed()
 	
 	
 # Called when state is initialized and properties are set

@@ -7,7 +7,10 @@ path="res://.import/Dummy.png-2c328e42de3a0993ba337bf159302090.stex"
 [deps]
 
 source_file="res://scenes/Enemy1/Sprites/Dummy.png"
+source_md5="d2fd0fb2d4276d5ba8578d5cff388334"
+
 dest_files=[ "res://.import/Dummy.png-2c328e42de3a0993ba337bf159302090.stex" ]
+dest_md5="c034f4c0bb237e5d7718ec39b18aee19"
 
 [params]
 
