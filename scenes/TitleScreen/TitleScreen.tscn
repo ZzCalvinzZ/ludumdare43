@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.519333 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TitleScreen" type="Node"]
+[node name="TitleScreen" type="Node" index="0"]
 
 script = ExtResource( 1 )
 cutoff_multiplier = 50
@@ -44,7 +44,6 @@ margin_top = -65.0
 margin_right = 1097.0
 margin_bottom = 682.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -63,7 +62,6 @@ margin_right = 2048.0
 margin_bottom = 1118.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -92,7 +90,6 @@ blend_times = [  ]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "TitleScreen"
@@ -101,7 +98,6 @@ bus = "TitleScreen"
 
 stream = null
 volume_db = -14.4
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -129,7 +125,6 @@ margin_right = 154.0
 margin_bottom = 62.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -185,7 +180,6 @@ margin_right = 122.01
 margin_bottom = 62.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -241,7 +235,6 @@ margin_right = 123.0
 margin_bottom = 55.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1

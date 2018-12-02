@@ -7,7 +7,10 @@ path="res://.import/LegsIcon.png-c40183ebdb89f7e1d879a1137a889dae.stex"
 [deps]
 
 source_file="res://scenes/Sacrifices/Legs/Sprites/LegsIcon.png"
+source_md5="615032435d3ccced42f6de2d9298163e"
+
 dest_files=[ "res://.import/LegsIcon.png-c40183ebdb89f7e1d879a1137a889dae.stex" ]
+dest_md5="ff3aca9edfa1303235159f75f8a091de"
 
 [params]
 

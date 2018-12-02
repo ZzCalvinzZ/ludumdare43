@@ -322,6 +322,13 @@ _sections_unfolded = [ "Material", "Visibility" ]
 position = Vector2( 2.2262, -1.49707 )
 scale = Vector2( 3.05409, 3.05409 )
 shape = SubResource( 13 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_entered" from="." to="." method="_on_hero_area_entered"]
 

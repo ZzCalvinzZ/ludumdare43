@@ -10,7 +10,16 @@ var next_idle = 'idle_down'
 export (int) var MOVE_SPEED = 250
 
 var animator
+var sound_effects
 var sprite
+
+var ouches = [
+	preload("res://scenes/Hero/Sound Effects/Ouch1.wav"),
+	preload("res://scenes/Hero/Sound Effects/Ouch2.wav"),
+	preload("res://scenes/Hero/Sound Effects/Ouch3.wav"),
+	preload("res://scenes/Hero/Sound Effects/Ouch4.wav"),
+	preload("res://scenes/Hero/Sound Effects/Ouch5.wav")
+]
 
 var state_machine
 
@@ -22,6 +31,8 @@ enum States {
 
 func _ready():
 	animator = get_node('AnimationPlayer')
+	sound_effects = get_node('AudioStreamPlayer')
+
 	state_machine = StateMachine.new(self, Idle, animator, {
 		Idle: get_node('Idle'),
 		Move: get_node('Move'),
@@ -42,3 +53,7 @@ func set_motion(motion, next_idle):
 func _on_hero_area_entered(area):
 	if area.name.find('Enemy1') > -1:
 		emit_signal('hit')
+
+	sound_effects.stream = ouches[rand_range(0, len(ouches))]
+	sound_effects.play()
+	emit_signal('hit')

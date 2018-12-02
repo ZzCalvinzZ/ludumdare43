@@ -44,6 +44,7 @@ func process(delta):
 	pass
 
 func _on_BackupTimer_timeout():
+	enemy.play_attack_sound()
 	phase = Phases.Attacking
 	$AttackTimer.start()
 

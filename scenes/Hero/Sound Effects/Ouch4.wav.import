@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ouch4.wav-50facb8d27adec6ca5f0b1ef0f1a00a6.sample"
+
+[deps]
+
+source_file="res://scenes/Hero/Sound Effects/Ouch4.wav"
+source_md5="da4cbce92e5b708567b5724f6a24b3d8"
+
+dest_files=[ "res://.import/Ouch4.wav-50facb8d27adec6ca5f0b1ef0f1a00a6.sample" ]
+dest_md5="45cbcebc8ac3ee8522c51d85d2203014"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
