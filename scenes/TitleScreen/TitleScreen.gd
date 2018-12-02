@@ -9,17 +9,45 @@ var cutoff = CUTOFF_MIN
 var cutoff_dir = 1
 export (float) var cutoff_multiplier = 50
 
+var highlighted_sacrifice = 0
+var sacrifices
+
+var sound_effects
+
+
 func _input(event):
 	if event.is_action_pressed('start'):
 		get_tree().change_scene("res://scenes/World/World.tscn")
-
+		
+	if event.is_action_pressed('left'):
+		highlighted_sacrifice -= 1
+		self.select_sacrifice()
+		
+		if highlighted_sacrifice < 0:
+			highlighted_sacrifice = len(sacrifices) - 1
+			
+	elif event.is_action_pressed('right'):
+		highlighted_sacrifice += 1
+		self.select_sacrifice()
+		
+		if highlighted_sacrifice > len(sacrifices) - 1:
+			highlighted_sacrifice = 0
+			
 
 func _ready():
 	animator = find_node("AnimationPlayer")
+	sound_effects = get_node("SoundEffectsPlayer")
 	animator.play("pulse")
 	
 	lowpass = AudioServer.get_bus_effect(1, 0)
 	lowpass.cutoff_hz = cutoff
+	
+	sacrifices = [
+		find_node("Heart"),
+		find_node("Legs"),
+		find_node("Eyes")
+	]
+	
 
 func _process(delta):
 	lowpass.cutoff_hz = cutoff
@@ -29,4 +57,12 @@ func _process(delta):
 		cutoff_dir = -1
 	if cutoff < CUTOFF_MIN:
 		cutoff_dir = 1
+	
+	for sacrifice in sacrifices:
+		sacrifice.highlighted = false
 		
+	sacrifices[highlighted_sacrifice].highlighted = true
+	
+	
+func select_sacrifice():
+	sound_effects.play()

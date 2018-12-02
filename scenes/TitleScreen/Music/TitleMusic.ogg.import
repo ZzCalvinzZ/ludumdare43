@@ -7,7 +7,10 @@ path="res://.import/TitleMusic.ogg-abdbe09dcc52553056e9a18ebe116811.oggstr"
 [deps]
 
 source_file="res://scenes/TitleScreen/Music/TitleMusic.ogg"
+source_md5="98fd8de3641db2a98d422c133305e84e"
+
 dest_files=[ "res://.import/TitleMusic.ogg-abdbe09dcc52553056e9a18ebe116811.oggstr" ]
+dest_md5="687d11bc54fae07069f7b867064aeb00"
 
 [params]
 

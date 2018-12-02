@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Pixel.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/TitleScreen/Music/TitleMusic.ogg" type="AudioStream" id=3]
-[ext_resource path="res://scenes/Sacrifices/Heart/Heart.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Sacrifices/Eyes/Eyes.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Sacrifices/Legs/Legs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/TitleScreen/Sound Effects/SelectSacrifice.wav" type="AudioStream" id=4]
+[ext_resource path="res://scenes/Sacrifices/Heart/Heart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Sacrifices/Sacrifice.gd" type="Script" id=6]
+[ext_resource path="res://scenes/TitleScreen/Textures/light.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Sacrifices/Legs/Legs.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Sacrifices/Eyes/Eyes.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -23,7 +26,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.519333 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="TitleScreen" type="Node" index="0"]
@@ -37,12 +40,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -72.0
-margin_top = -66.0
-margin_right = 1096.0
-margin_bottom = 681.0
+margin_left = -71.0
+margin_top = -65.0
+margin_right = 1097.0
+margin_bottom = 682.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -56,18 +58,17 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 3.0
-margin_top = -41.0
+margin_top = -83.0
 margin_right = 2048.0
-margin_bottom = 1160.0
+margin_bottom = 1118.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.8558 )
 text = "Choose Your Sacrifice"
 align = 1
 valign = 1
@@ -90,23 +91,185 @@ blend_times = [  ]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "TitleScreen"
 
-[node name="Sacrifices" type="Node2D" parent="." index="3"]
+[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
-[node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 4 )]
+stream = ExtResource( 4 )
+volume_db = -2.3
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Sacrifices" type="Node2D" parent="." index="4"]
+
+position = Vector2( 2.70752, -55.9552 )
+
+[node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 361.859, 357.778 )
+script = ExtResource( 6 )
+highlighted = false
+intensity_increment = 1
 
-[node name="Eyes" parent="Sacrifices" index="1" instance=ExtResource( 5 )]
+[node name="Label" type="Label" parent="Sacrifices/Heart" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = 28.0
+margin_right = 154.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Heart"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Light2D" type="Light2D" parent="Sacrifices/Heart" index="2"]
+
+position = Vector2( 0.902588, 10.8301 )
+enabled = true
+editor_only = false
+texture = ExtResource( 7 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+
+[node name="Legs" parent="Sacrifices" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 516.249, 361.859 )
+script = ExtResource( 6 )
+highlighted = false
+intensity_increment = 1
+
+[node name="Label" type="Label" parent="Sacrifices/Legs" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.9903
+margin_top = 28.0
+margin_right = 122.01
+margin_bottom = 62.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Legs"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Light2D" type="Light2D" parent="Sacrifices/Legs" index="2"]
+
+position = Vector2( -0.0626221, 11.2616 )
+enabled = true
+editor_only = false
+texture = ExtResource( 7 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+
+[node name="Eyes" parent="Sacrifices" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 650.259, 361.859 )
+script = ExtResource( 6 )
+highlighted = false
+intensity_increment = 1
 
-[node name="Legs" parent="Sacrifices" index="2" instance=ExtResource( 6 )]
+[node name="Label" type="Label" parent="Sacrifices/Eyes" index="1"]
 
-position = Vector2( 519.663, 361.859 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_top = 21.0
+margin_right = 123.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Eyes"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Light2D" type="Light2D" parent="Sacrifices/Eyes" index="2"]
+
+position = Vector2( 1.30383, 11.2616 )
+enabled = true
+editor_only = false
+texture = ExtResource( 7 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
 
 
