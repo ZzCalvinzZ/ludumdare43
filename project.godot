@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="ludumdare43"
-run/main_scene="res://scenes/World/World.tscn"
+run/main_scene="res://scenes/TitleScreen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
