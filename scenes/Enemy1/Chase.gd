@@ -8,6 +8,9 @@ func ready():
 	enemy = self._parent
 
 func _process(delta):
+	if !self.get_current_state() == enemy.States.Chase:
+		return
+
 	var target = enemy.target
 
 	enemy.motion = Vector2()
