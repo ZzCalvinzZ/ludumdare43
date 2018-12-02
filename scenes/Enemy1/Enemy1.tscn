@@ -1,25 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Enemy1/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy1/Sprites/Dummy.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Enemy1/Chase.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Enemy1/Attack.gd" type="Script" id=4]
 
-[node name="Enemy1" type="KinematicBody2D" index="0"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 8.30748 )
+
+[node name="Enemy1" type="Area2D"]
 
 position = Vector2( 468.5, 243.5 )
 scale = Vector2( 1.14062, 1.07812 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3.41545, -2.8101 )
-scale = Vector2( 0.658455, 0.797585 )
+visible = false
+position = Vector2( 3.41545, -2.66374 )
+scale = Vector2( 0.658455, 0.964214 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

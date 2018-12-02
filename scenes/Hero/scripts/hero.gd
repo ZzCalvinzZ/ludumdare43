@@ -1,4 +1,6 @@
-extends KinematicBody2D
+extends Area2D
+
+signal hit
 
 var StateMachine = load("res://scripts/state_machine.gd")
 
@@ -26,18 +28,15 @@ func _ready():
 	})
 
 	sprite = find_node("Sprite")
-	
+
 
 func _process(delta):
 	state_machine.process(delta)
-	
-	
+	position += motion * delta
+
 func set_motion(motion, next_idle):
 	self.next_idle = next_idle
 	self.motion = motion
 
-
-func _physics_process(delta):
-	state_machine.physics_process(delta)
-	move_and_slide(motion)
-
+func _on_hero_body_entered(body):
+	emit_signal('hit')

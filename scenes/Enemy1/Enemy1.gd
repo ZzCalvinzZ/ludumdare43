@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 var StateMachine = load("res://scripts/state_machine.gd")
 
@@ -25,13 +25,10 @@ func _ready():
 
 func _process(delta):
 	state_machine.process(delta)
+	position += motion * delta
 
 func update_target(new_target):
 	target = new_target
 
 func chase():
 	state_machine.change_states(States.Chase)
-
-func _physics_process(delta):
-	move_and_slide(motion)
-	state_machine.physics_process(delta)

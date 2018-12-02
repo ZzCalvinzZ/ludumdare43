@@ -158,13 +158,16 @@ tracks/0/keys = {
 "values": [ 7, 11 ]
 }
 
-[node name="hero" type="KinematicBody2D"]
+[node name="hero" type="Area2D"]
 
 position = Vector2( 504.056, 283.366 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 MOVE_SPEED = 250
 

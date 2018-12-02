@@ -12,7 +12,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 31.3197, 34.677, 0, 0, 0, 0, 984.942, 37.3978, 0, 0, 0, 0, 989.023, 567.944, 0, 0, 0, 0, 32.6801, 570.664, 0, 0, 0, 0, 31.3197, 34.677 )
 }
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Enemy1 = ExtResource( 2 )
@@ -47,5 +47,9 @@ _sections_unfolded = [ "Pause" ]
 [node name="CharacterOverlay" parent="." index="3" instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+
+[connection signal="hit" from="hero" to="." method="_on_hero_hit"]
+
+[connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
 
 
