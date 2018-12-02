@@ -25,7 +25,7 @@ curve = SubResource( 1 )
 [node name="EnemySpawn" type="PathFollow2D" parent="EnemyPath" index="0"]
 
 position = Vector2( 31.3197, 34.677 )
-rotation = 0.0028523
+rotation = 0.00285327
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -50,6 +50,7 @@ _sections_unfolded = [ "Pause" ]
 
 stream = null
 volume_db = 5.53
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

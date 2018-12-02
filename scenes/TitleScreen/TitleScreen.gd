@@ -24,6 +24,9 @@ func _input(event):
 		else:
 			Globals.health = 3
 
+		if Globals.selected_sacrifice == "Legs":
+			Globals.speed = 100
+
 		get_tree().change_scene("res://scenes/World/World.tscn")
 
 

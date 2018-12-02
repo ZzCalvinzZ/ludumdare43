@@ -7,10 +7,7 @@ path="res://.import/Ouch5.wav-fea23ca4f16fed24df5a40ba8feadd95.sample"
 [deps]
 
 source_file="res://scenes/Hero/Sound Effects/Ouch5.wav"
-source_md5="978585f8412438456d6d698871500c49"
-
 dest_files=[ "res://.import/Ouch5.wav-fea23ca4f16fed24df5a40ba8feadd95.sample" ]
-dest_md5="71f0321cbfc2f8bbd45e2dc83c93b0b9"
 
 [params]
 

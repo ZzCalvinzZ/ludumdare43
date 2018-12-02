@@ -7,7 +7,6 @@ var StateMachine = load("res://scripts/state_machine.gd")
 var deadzone = 0.5
 var motion = Vector2()
 var next_idle = 'idle_down'
-export (int) var MOVE_SPEED = 250
 
 var animator
 var sound_effects
@@ -56,4 +55,3 @@ func _on_hero_area_entered(area):
 
 	sound_effects.stream = ouches[rand_range(0, len(ouches))]
 	sound_effects.play()
-	emit_signal('hit')
