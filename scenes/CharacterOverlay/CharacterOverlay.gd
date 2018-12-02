@@ -17,5 +17,5 @@ func _process(delta):
 
 func _on_hero_hit():
 	health -= 1
-	var icon = health_icons.pop()
+	var icon = health_icons.pop_back()
 	icon.hide()

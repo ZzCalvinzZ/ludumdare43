@@ -38,5 +38,5 @@ func set_motion(motion, next_idle):
 	self.next_idle = next_idle
 	self.motion = motion
 
-func _on_hero_body_entered(body):
+func _on_hero_area_entered(area):
 	emit_signal('hit')

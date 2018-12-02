@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TitleScreen" type="Node" index="0"]
+[node name="TitleScreen" type="Node"]
 
 script = ExtResource( 1 )
 cutoff_multiplier = 50
@@ -39,6 +39,7 @@ margin_top = -66.0
 margin_right = 1096.0
 margin_bottom = 681.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -56,6 +57,7 @@ margin_right = 2044.0
 margin_bottom = 1201.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -84,6 +86,7 @@ blend_times = [  ]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "TitleScreen"
