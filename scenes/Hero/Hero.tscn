@@ -158,7 +158,7 @@ tracks/0/keys = {
 "values": [ 7, 11 ]
 }
 
-[node name="hero" type="Area2D" index="0"]
+[node name="hero" type="Area2D"]
 
 position = Vector2( 504.056, 283.366 )
 input_pickable = true
