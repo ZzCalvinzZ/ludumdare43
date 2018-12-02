@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Swing.wav-0229673b02dac0ea05bd5dc9982a94fb.sample"
+
+[deps]
+
+source_file="res://scenes/Enemy1/Sound Effects/Swing.wav"
+source_md5="18d452c76d4dd248e88d6107b71dba97"
+
+dest_files=[ "res://.import/Swing.wav-0229673b02dac0ea05bd5dc9982a94fb.sample" ]
+dest_md5="2f6560cb53c333305b53469d3885e133"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

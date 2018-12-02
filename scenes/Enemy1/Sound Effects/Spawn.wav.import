@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spawn.wav-d6349cd07c557212f66e8b44f6924531.sample"
+
+[deps]
+
+source_file="res://scenes/Enemy1/Sound Effects/Spawn.wav"
+source_md5="eea9552c16e676be8451e0a415af676c"
+
+dest_files=[ "res://.import/Spawn.wav-d6349cd07c557212f66e8b44f6924531.sample" ]
+dest_md5="437f9e0e830ca0cd7f107ecaa2092f3c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

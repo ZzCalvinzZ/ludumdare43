@@ -7,6 +7,9 @@ var motion = Vector2()
 var target
 var animator
 var state_machine
+var audio_stream
+
+var swing_sound = preload("res://scenes/Enemy1/Sound Effects/Swing.wav")
 
 enum States {
 	Chase,
@@ -15,6 +18,7 @@ enum States {
 
 func _ready():
 	animator = get_node('AnimationPlayer')
+	audio_stream = get_node('AudioStreamPlayer')
 
 	state_machine = StateMachine.new(self, States.Chase, animator, {
 		Chase: $Chase,
@@ -35,3 +39,8 @@ func kill():
 
 func chase():
 	state_machine.change_states(States.Chase)
+	
+func play_attack_sound():
+	audio_stream.stream = swing_sound
+	audio_stream.volume_db = 6
+	audio_stream.play()
