@@ -7,10 +7,7 @@ path="res://.import/SelectSacrifice.wav-4d72698886a30f5fc86298f40a25ddc6.sample"
 [deps]
 
 source_file="res://scenes/TitleScreen/Sound Effects/SelectSacrifice.wav"
-source_md5="7502d7687f6d6e0135b0249d9b8d0942"
-
 dest_files=[ "res://.import/SelectSacrifice.wav-4d72698886a30f5fc86298f40a25ddc6.sample" ]
-dest_md5="3b507ee4ce07d157fce073f56ab92f8b"
 
 [params]
 

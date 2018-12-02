@@ -7,10 +7,7 @@ path="res://.import/Eyecon.png-484386e116317a462509df81cfc6cf8b.stex"
 [deps]
 
 source_file="res://scenes/Sacrifices/Eyes/Sprites/Eyecon.png"
-source_md5="bf856128a485c508cfb40c2f3fba6790"
-
 dest_files=[ "res://.import/Eyecon.png-484386e116317a462509df81cfc6cf8b.stex" ]
-dest_md5="e0de73148a49c3d5e88f02146c89c652"
 
 [params]
 

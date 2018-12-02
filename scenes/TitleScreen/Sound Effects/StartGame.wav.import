@@ -7,10 +7,7 @@ path="res://.import/StartGame.wav-40ce49c0ea3e9c0f6aca3b6748d42d48.sample"
 [deps]
 
 source_file="res://scenes/TitleScreen/Sound Effects/StartGame.wav"
-source_md5="8c4c262e66ccacdd4a48c4e965f5787c"
-
 dest_files=[ "res://.import/StartGame.wav-40ce49c0ea3e9c0f6aca3b6748d42d48.sample" ]
-dest_md5="c7651e4249840cf59f4862784408e6ea"
 
 [params]
 

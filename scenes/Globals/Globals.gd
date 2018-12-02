@@ -1,6 +1,7 @@
 extends Node
 
 var selected_sacrifice
+var enemies = []
 
 func _ready():
 	# Called every time the node is added to the scene.

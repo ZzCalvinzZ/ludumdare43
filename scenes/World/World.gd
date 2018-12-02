@@ -3,7 +3,6 @@ extends Node
 export (PackedScene) var Enemy1
 
 var health = 3
-var enemies = []
 var hero
 var sound_effects
 
@@ -19,7 +18,7 @@ func _ready():
 func _process(delta):
 	hero = $hero
 
-	for enemy in enemies:
+	for enemy in Globals.enemies:
 		enemy.update_target(hero)
 
 func _physics_process(delta):
@@ -28,7 +27,7 @@ func _physics_process(delta):
 func _on_SpawnTimer_timeout():
 	$EnemyPath/EnemySpawn.set_offset(randi())
 	var enemy = Enemy1.instance()
-	enemies.append(enemy)
+	Globals.enemies.append(enemy)
 	add_child(enemy)
 	enemy.position = $EnemyPath/EnemySpawn.position
 

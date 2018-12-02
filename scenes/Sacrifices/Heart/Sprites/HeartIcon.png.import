@@ -7,10 +7,7 @@ path="res://.import/HeartIcon.png-01965591ac2d881beb3c16cd2228ca47.stex"
 [deps]
 
 source_file="res://scenes/Sacrifices/Heart/Sprites/HeartIcon.png"
-source_md5="bd67412e26ae5de516a471a52d0e3ef2"
-
 dest_files=[ "res://.import/HeartIcon.png-01965591ac2d881beb3c16cd2228ca47.stex" ]
-dest_md5="3bea9951da7899401e8340763b0f61a6"
 
 [params]
 

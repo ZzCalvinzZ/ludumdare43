@@ -10,7 +10,6 @@ var state_machine
 
 enum States {
 	Chase,
-	# Circle,
 	Attack
 }
 
@@ -19,7 +18,6 @@ func _ready():
 
 	state_machine = StateMachine.new(self, States.Chase, animator, {
 		Chase: $Chase,
-		# Circle: $Circle,
 		Attack: $Attack
 	})
 
@@ -29,6 +27,11 @@ func _process(delta):
 
 func update_target(new_target):
 	target = new_target
+
+func kill():
+	print('kill me')
+	self.hide()
+	Globals.enemies.remove(self)
 
 func chase():
 	state_machine.change_states(States.Chase)

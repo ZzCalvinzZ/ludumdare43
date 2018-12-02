@@ -17,14 +17,15 @@ var state_machine
 enum States {
 	Idle,
 	Move,
+	Attack,
 }
 
 func _ready():
 	animator = get_node('AnimationPlayer')
-
 	state_machine = StateMachine.new(self, Idle, animator, {
 		Idle: get_node('Idle'),
 		Move: get_node('Move'),
+		Attack: get_node('Attack'),
 	})
 
 	sprite = find_node("Sprite")
@@ -39,4 +40,5 @@ func set_motion(motion, next_idle):
 	self.motion = motion
 
 func _on_hero_area_entered(area):
-	emit_signal('hit')
+	if area.name.find('Enemy1') > -1:
+		emit_signal('hit')
