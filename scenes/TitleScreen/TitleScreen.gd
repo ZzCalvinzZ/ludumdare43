@@ -18,7 +18,9 @@ var select_sacrifice_sound = preload("res://scenes/TitleScreen/Sound Effects/Sel
 
 func _input(event):
 	if event.is_action_pressed('start'):
+		Globals.selected_sacrifice = sacrifices[highlighted_sacrifice].name
 		get_tree().change_scene("res://scenes/World/World.tscn")
+		
 		
 	if event.is_action_pressed('left'):
 		highlighted_sacrifice -= 1

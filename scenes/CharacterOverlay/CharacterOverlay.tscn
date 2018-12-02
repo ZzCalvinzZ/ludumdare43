@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Pixel.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scenes/Hero/sprites/hero_new.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Sacrifices/Heart/Heart.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Sacrifices/Sacrifice.gd" type="Script" id=4]
+[ext_resource path="res://scenes/TitleScreen/Textures/light.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Sacrifices/Legs/Legs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Sacrifices/Eyes/Eyes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Hero/sprites/hero_new.png" type="Texture" id=8]
 
 [node name="CharacterOverlay" type="Node"]
 
@@ -11,7 +16,7 @@ Y_Position = null
 
 [node name="Sacrifice" type="Node2D" parent="." index="0"]
 
-position = Vector2( 974.44, 545.526 )
+position = Vector2( 942.852, 543.721 )
 
 [node name="Label" type="Label" parent="Sacrifice" index="0"]
 
@@ -36,13 +41,201 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
+[node name="Sacrifices" type="Node2D" parent="Sacrifice" index="1"]
+
+position = Vector2( -586.627, -404.321 )
+
+[node name="Heart" type="Node2D" parent="Sacrifice/Sacrifices" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 516.187, 362.291 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+highlighted = false
+intensity_increment = 1
+
+[node name="Label" type="Label" parent="Sacrifice/Sacrifices/Heart" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = 28.0
+margin_right = 154.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Heart"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D" type="Light2D" parent="Sacrifice/Sacrifices/Heart" index="2"]
+
+position = Vector2( 0.902588, 10.8301 )
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Legs" type="Node2D" parent="Sacrifice/Sacrifices" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 516.249, 361.859 )
+script = ExtResource( 4 )
+highlighted = false
+intensity_increment = 1
+
+[node name="Label" type="Label" parent="Sacrifice/Sacrifices/Legs" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.9903
+margin_top = 28.0
+margin_right = 122.01
+margin_bottom = 62.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Legs"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D" type="Light2D" parent="Sacrifice/Sacrifices/Legs" index="2"]
+
+position = Vector2( -0.0626221, 11.2616 )
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Eyes" type="Node2D" parent="Sacrifice/Sacrifices" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 516.689, 362.762 )
+script = ExtResource( 4 )
+highlighted = false
+intensity_increment = 1
+
+[node name="Label" type="Label" parent="Sacrifice/Sacrifices/Eyes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_top = 21.0
+margin_right = 123.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Eyes"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D" type="Light2D" parent="Sacrifice/Sacrifices/Eyes" index="2"]
+
+position = Vector2( 1.30383, 11.2616 )
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 0.08
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Health" type="Node2D" parent="." index="1"]
 
 [node name="HealthSprite1" type="Sprite" parent="Health" index="0"]
 
 visible = false
 position = Vector2( 59.8564, 530.546 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 vframes = 24
 frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
@@ -51,7 +244,7 @@ _sections_unfolded = [ "Animation", "Visibility" ]
 
 visible = false
 position = Vector2( 103.388, 530.185 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 vframes = 24
 frame = 1
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
@@ -60,7 +253,7 @@ _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 visible = false
 position = Vector2( 146.281, 530.906 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 vframes = 24
 frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]

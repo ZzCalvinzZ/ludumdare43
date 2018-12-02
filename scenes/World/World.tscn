@@ -56,8 +56,8 @@ bus = "Master"
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
-[connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
-
 [connection signal="hit" from="hero" to="." method="_on_hero_hit"]
+
+[connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
 
 
