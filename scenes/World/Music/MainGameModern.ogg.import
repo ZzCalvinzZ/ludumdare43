@@ -7,10 +7,7 @@ path="res://.import/MainGameModern.ogg-9f93d604019af7d81d6f37f357570307.oggstr"
 [deps]
 
 source_file="res://scenes/World/Music/MainGameModern.ogg"
-source_md5="a0bea9d21fa5ec53adfa4ae5baa6084f"
-
 dest_files=[ "res://.import/MainGameModern.ogg-9f93d604019af7d81d6f37f357570307.oggstr" ]
-dest_md5="ab45ee8850267d7df91d96b733b6b9d6"
 
 [params]
 

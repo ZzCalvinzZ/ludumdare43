@@ -2,7 +2,6 @@ extends Node
 
 export (PackedScene) var Enemy1
 
-var health = 3
 var hero
 
 var sound_effects
@@ -16,11 +15,11 @@ func _ready():
 	sound_effects = get_node("SoundEffectsPlayer")
 	sound_effects.stream = start_game_sound
 	sound_effects.play()
-	
+
 	music = get_node("MusicPlayer")
 	music.stream = main_music_pixelated
 	music.play()
-	
+
 	randomize()
 	$SpawnTimer.start()
 
@@ -41,17 +40,17 @@ func _on_SpawnTimer_timeout():
 	enemy.position = $EnemyPath/EnemySpawn.position
 
 func _on_hero_hit():
-	health -= 1
+	Globals.health -= 1
 	self.change_music(main_music_pixelated)
-	
+
 func change_music(stream):
 	var position = music.get_playback_position()
-	
+
 	if stream == main_music_pixelated:
 		AudioServer.set_bus_effect_enabled(2, 0, true)
 	else:
 		AudioServer.set_bus_effect_enabled(2, 0, false)
-	
+
 	music.stream = stream
 	music.play()
 	music.seek(position)
