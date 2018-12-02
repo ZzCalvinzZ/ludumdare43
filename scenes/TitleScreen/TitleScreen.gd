@@ -67,5 +67,4 @@ func _process(delta):
 	
 func select_sacrifice():
 	sound_effects.stream = select_sacrifice_sound
-	sound_effects.volume_db = -2.3
 	sound_effects.play()

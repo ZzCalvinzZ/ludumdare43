@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Pixel.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scenes/Hero/sprites/hero.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Hero/sprites/hero_new.png" type="Texture" id=3]
 
 [node name="CharacterOverlay" type="Node"]
 
@@ -25,7 +25,6 @@ margin_right = 428.0
 margin_bottom = 50.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -44,8 +43,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 visible = false
 position = Vector2( 59.8564, 530.546 )
 texture = ExtResource( 3 )
-vframes = 9
-hframes = 6
+vframes = 24
 frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
 
@@ -54,18 +52,16 @@ _sections_unfolded = [ "Animation", "Visibility" ]
 visible = false
 position = Vector2( 103.388, 530.185 )
 texture = ExtResource( 3 )
-vframes = 9
-hframes = 6
+vframes = 24
 frame = 1
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="HealthSprite3" type="Sprite" parent="Health" index="2"]
 
 visible = false
 position = Vector2( 146.281, 530.906 )
 texture = ExtResource( 3 )
-vframes = 9
-hframes = 6
+vframes = 24
 frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
 
@@ -81,7 +77,6 @@ margin_right = 278.0
 margin_bottom = 595.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1

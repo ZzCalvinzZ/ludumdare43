@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeroRightStill.png-22f563c1108a5d89d8158e2e6a9fc6dd.stex"
+path="res://.import/hero_new.png-f22e68ba5956fcef6d8386d1a321ae4c.stex"
 
 [deps]
 
-source_file="res://scenes/Hero/sprites/HeroRightStill.png"
-source_md5="d439b2cf330a3f6ac0694cee76aa33be"
+source_file="res://scenes/Hero/sprites/hero_new.png"
+source_md5="7090887422a656888357ef1950be4faa"
 
-dest_files=[ "res://.import/HeroRightStill.png-22f563c1108a5d89d8158e2e6a9fc6dd.stex" ]
-dest_md5="356d00d16374c886952c6fd5603fd6a6"
+dest_files=[ "res://.import/hero_new.png-f22e68ba5956fcef6d8386d1a321ae4c.stex" ]
+dest_md5="61b6ffa42c70ed065d4da4507594941b"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

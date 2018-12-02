@@ -97,7 +97,7 @@ bus = "TitleScreen"
 [node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = null
-volume_db = -2.3
+volume_db = -8.26
 autoplay = false
 mix_target = 0
 bus = "Master"
