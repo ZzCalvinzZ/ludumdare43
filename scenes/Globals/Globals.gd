@@ -4,6 +4,7 @@ var selected_sacrifice
 var enemies = []
 var health = null
 var speed = 250
+var light_scale = null
 
 func _ready():
 	# Called every time the node is added to the scene.

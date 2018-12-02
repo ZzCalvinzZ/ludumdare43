@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.519333 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TitleScreen" type="Node" index="0"]
+[node name="TitleScreen" type="Node"]
 
 script = ExtResource( 1 )
 cutoff_multiplier = 50
@@ -108,6 +108,7 @@ bus = "Master"
 
 [node name="Sacrifices" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 2.70752, -55.9552 )
 
 [node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 4 )]

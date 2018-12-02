@@ -27,6 +27,9 @@ func _input(event):
 		if Globals.selected_sacrifice == "Legs":
 			Globals.speed = 100
 
+		if Globals.selected_sacrifice == "Eyes":
+			Globals.light_scale = 1
+
 		get_tree().change_scene("res://scenes/World/World.tscn")
 
 

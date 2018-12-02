@@ -11,6 +11,8 @@ var start_game_sound = preload("res://scenes/TitleScreen/Sound Effects/StartGame
 var main_music_pixelated = preload("res://scenes/World/Music/MainGamePixelated.ogg")
 var main_music_modern = preload("res://scenes/World/Music/MainGameModern.ogg")
 
+var light_processed = false
+
 func _ready():
 	sound_effects = get_node("SoundEffectsPlayer")
 	sound_effects.stream = start_game_sound
@@ -25,6 +27,11 @@ func _ready():
 
 func _process(delta):
 	hero = $hero
+
+	if !light_processed && Globals.light_scale != null:
+		var light = find_node('HeroLight')
+		print(light.scale)
+		light.scale = Vector2(1,1)
 
 	for enemy in Globals.enemies:
 		enemy.update_target(hero)
