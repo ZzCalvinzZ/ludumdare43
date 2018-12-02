@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Platform Character Down.png-87af4f078d2f2ba69f6a776a477500e9.stex"
+
+[deps]
+
+source_file="res://scenes/Hero/sprites/Platform Character Down.png"
+source_md5="dcc877665dc687b7974c9b66877ddaef"
+
+dest_files=[ "res://.import/Platform Character Down.png-87af4f078d2f2ba69f6a776a477500e9.stex" ]
+dest_md5="ff8e7282392d7429f1373304c91bfd25"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

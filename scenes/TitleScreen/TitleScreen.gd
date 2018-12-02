@@ -13,6 +13,7 @@ var highlighted_sacrifice = 0
 var sacrifices
 
 var sound_effects
+var select_sacrifice_sound = preload("res://scenes/TitleScreen/Sound Effects/SelectSacrifice.wav")
 
 
 func _input(event):
@@ -65,4 +66,6 @@ func _process(delta):
 	
 	
 func select_sacrifice():
+	sound_effects.stream = select_sacrifice_sound
+	sound_effects.volume_db = -2.3
 	sound_effects.play()

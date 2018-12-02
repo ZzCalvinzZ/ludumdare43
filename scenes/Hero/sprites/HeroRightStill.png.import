@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LegsIcon.png-5af870bfda10f3e2087b6726e45b3709.stex"
+path="res://.import/HeroRightStill.png-22f563c1108a5d89d8158e2e6a9fc6dd.stex"
 
 [deps]
 
-source_file="res://scenes/Sacrifices/Legs/LegsIcon.png"
-source_md5="9bcacb10db806f61b39519464db6d813"
+source_file="res://scenes/Hero/sprites/HeroRightStill.png"
+source_md5="d439b2cf330a3f6ac0694cee76aa33be"
 
-dest_files=[ "res://.import/LegsIcon.png-5af870bfda10f3e2087b6726e45b3709.stex" ]
-dest_md5="39dafc09e5f9dbfb1f9641070f7a3595"
+dest_files=[ "res://.import/HeroRightStill.png-22f563c1108a5d89d8158e2e6a9fc6dd.stex" ]
+dest_md5="356d00d16374c886952c6fd5603fd6a6"
 
 [params]
 

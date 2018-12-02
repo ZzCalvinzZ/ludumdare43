@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Pixel.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/TitleScreen/Music/TitleMusic.ogg" type="AudioStream" id=3]
-[ext_resource path="res://scenes/TitleScreen/Sound Effects/SelectSacrifice.wav" type="AudioStream" id=4]
-[ext_resource path="res://scenes/Sacrifices/Heart/Heart.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Sacrifices/Sacrifice.gd" type="Script" id=6]
-[ext_resource path="res://scenes/TitleScreen/Textures/light.png" type="Texture" id=7]
-[ext_resource path="res://scenes/Sacrifices/Legs/Legs.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Sacrifices/Eyes/Eyes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Sacrifices/Heart/Heart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Sacrifices/Sacrifice.gd" type="Script" id=5]
+[ext_resource path="res://scenes/TitleScreen/Textures/light.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Sacrifices/Legs/Legs.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Sacrifices/Eyes/Eyes.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -97,7 +96,7 @@ bus = "TitleScreen"
 
 [node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 4 )
+stream = null
 volume_db = -2.3
 autoplay = false
 mix_target = 0
@@ -107,10 +106,10 @@ bus = "Master"
 
 position = Vector2( 2.70752, -55.9552 )
 
-[node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 5 )]
+[node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 361.859, 357.778 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 highlighted = false
 intensity_increment = 1
 
@@ -142,7 +141,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 position = Vector2( 0.902588, 10.8301 )
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.08
 color = Color( 1, 1, 1, 1 )
@@ -162,10 +161,10 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
-[node name="Legs" parent="Sacrifices" index="1" instance=ExtResource( 8 )]
+[node name="Legs" parent="Sacrifices" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 516.249, 361.859 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 highlighted = false
 intensity_increment = 1
 
@@ -197,7 +196,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 position = Vector2( -0.0626221, 11.2616 )
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.08
 color = Color( 1, 1, 1, 1 )
@@ -217,10 +216,10 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
-[node name="Eyes" parent="Sacrifices" index="2" instance=ExtResource( 9 )]
+[node name="Eyes" parent="Sacrifices" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 650.259, 361.859 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 highlighted = false
 intensity_increment = 1
 
@@ -252,7 +251,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 position = Vector2( 1.30383, 11.2616 )
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.08
 color = Color( 1, 1, 1, 1 )

@@ -10,8 +10,12 @@ var MAX_LIGHT_INTENSITY = 2
 var light_intensity = MAX_LIGHT_INTENSITY
 var light_intensity_dir = 1
 
+var animator
+
 func _ready():
 	light = get_node("Light2D")
+	animator = get_node("AnimationPlayer")
+	animator.play('idle')
 
 func _process(delta):
 	if highlighted:

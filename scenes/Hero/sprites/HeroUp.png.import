@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Eyecon.png-d7219fde3cf6ab69572764c45e0dd141.stex"
+path="res://.import/HeroUp.png-e63fb3b3cf9b7fc84950fb1d49df7901.stex"
 
 [deps]
 
-source_file="res://scenes/Sacrifices/Eyes/Eyecon.png"
-source_md5="9888332b88dd0fa4f354a07fff5b00f9"
+source_file="res://scenes/Hero/sprites/HeroUp.png"
+source_md5="2e223e7929703e3988104e1f671499ff"
 
-dest_files=[ "res://.import/Eyecon.png-d7219fde3cf6ab69572764c45e0dd141.stex" ]
-dest_md5="05cb3f3f03b910b3afc2678496585936"
+dest_files=[ "res://.import/HeroUp.png-e63fb3b3cf9b7fc84950fb1d49df7901.stex" ]
+dest_md5="21e9e8bd4ac38b64763273da4db01bd3"
 
 [params]
 

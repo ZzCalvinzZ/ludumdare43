@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeartIcon.png-66e6d4dd88a2683c01bdae514643a193.stex"
+path="res://.import/HeroUpStill.png-60f831a9408a87e80f3c97cfd9a0f7fc.stex"
 
 [deps]
 
-source_file="res://scenes/Sacrifices/Heart/HeartIcon.png"
-source_md5="629580cce046c2396ebe3e1faf1606e5"
+source_file="res://scenes/Hero/sprites/HeroUpStill.png"
+source_md5="7a76f2860b8db0b50ad3135c63dbf8ae"
 
-dest_files=[ "res://.import/HeartIcon.png-66e6d4dd88a2683c01bdae514643a193.stex" ]
-dest_md5="1ea4039e5704a084eac06829e1c351b3"
+dest_files=[ "res://.import/HeroUpStill.png-60f831a9408a87e80f3c97cfd9a0f7fc.stex" ]
+dest_md5="cd1a781a59782fa827c67d3bcc4c8296"
 
 [params]
 
