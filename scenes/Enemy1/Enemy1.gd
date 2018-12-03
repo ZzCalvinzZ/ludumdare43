@@ -39,7 +39,7 @@ func kill():
 	self.queue_free()
 	Globals.enemies.erase(self)
 	Globals.killable_enemies.erase(self)
-
+	Globals.music = 'modern'
 
 func chase():
 	state_machine.change_states(States.Chase)

@@ -6,10 +6,14 @@ var hero
 
 var sound_effects
 var music
+var selected_music
 
 var start_game_sound = preload("res://scenes/TitleScreen/Sound Effects/StartGame.wav")
-var main_music_pixelated = preload("res://scenes/World/Music/MainGamePixelated.ogg")
-var main_music_modern = preload("res://scenes/World/Music/MainGameModern.ogg")
+
+var musics = {
+	'modern': preload("res://scenes/World/Music/MainGameModern.ogg"),
+	'pixelated': preload("res://scenes/World/Music/MainGamePixelated.ogg")
+}
 
 var light_processed = false
 
@@ -19,8 +23,7 @@ func _ready():
 	sound_effects.play()
 
 	music = get_node("MusicPlayer")
-	music.stream = main_music_pixelated
-	music.play()
+	self.change_music('pixelated')
 
 	randomize()
 	$SpawnTimer.start()
@@ -35,6 +38,9 @@ func _process(delta):
 
 	for enemy in Globals.enemies:
 		enemy.update_target(hero)
+		
+	if Globals.music != selected_music:
+		self.change_music(Globals.music)
 
 func _physics_process(delta):
 	pass
@@ -48,12 +54,15 @@ func _on_SpawnTimer_timeout():
 
 func _on_hero_hit():
 	Globals.health -= 1
-	self.change_music(main_music_pixelated)
+	Globals.music = 'pixelated'
 
-func change_music(stream):
+func change_music(music_name):
+	selected_music = music_name
+	Globals.music = music_name
+	var stream = musics[music_name]
 	var position = music.get_playback_position()
 
-	if stream == main_music_pixelated:
+	if stream == musics['pixelated']:
 		AudioServer.set_bus_effect_enabled(2, 0, true)
 	else:
 		AudioServer.set_bus_effect_enabled(2, 0, false)

@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Hero/Hero.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/World/light_mask.png" type="Texture" id=4]
 [ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.gd" type="Script" id=6]
-[ext_resource path="res://scenes/World/white.png" type="Texture" id=7]
-[ext_resource path="res://scenes/World/black.png" type="Texture" id=8]
+[ext_resource path="res://scenes/World/white.png" type="Texture" id=6]
+[ext_resource path="res://scenes/World/black.png" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -29,7 +28,7 @@ curve = SubResource( 1 )
 [node name="EnemySpawn" type="PathFollow2D" parent="EnemyPath" index="0"]
 
 position = Vector2( 31.3197, 34.677 )
-rotation = 0.00285327
+rotation = 0.0028523
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -81,12 +80,9 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Transform" ]
 
-[node name="CharacterOverlay" type="Node2D" parent="." index="3" instance=ExtResource( 5 )]
+[node name="CharacterOverlay" parent="." index="3" instance=ExtResource( 5 )]
 
-z_index = 10
-script = ExtResource( 6 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
-Y_Position = null
 
 [node name="OverlayLight" type="Light2D" parent="CharacterOverlay" index="0"]
 
@@ -94,7 +90,7 @@ position = Vector2( 554.705, 316.554 )
 scale = Vector2( 35.669, 19.6939 )
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -119,7 +115,6 @@ _sections_unfolded = [ "Range", "Transform" ]
 
 stream = null
 volume_db = 5.53
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -136,13 +131,13 @@ bus = "MainMusic"
 
 scale = Vector2( 1044.97, 624.504 )
 z_index = -10
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Region", "Z Index" ]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
-[connection signal="hit" from="hero" to="." method="_on_hero_hit"]
-
 [connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
+
+[connection signal="hit" from="hero" to="." method="_on_hero_hit"]
 
 

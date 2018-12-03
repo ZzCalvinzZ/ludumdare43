@@ -7,6 +7,7 @@ var killable_enemies = []
 var health = null
 var speed = 250
 var light_scale = null
+var music = null
 
 func _ready():
 	# Called every time the node is added to the scene.
