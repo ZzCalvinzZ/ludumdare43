@@ -32,6 +32,7 @@ func _process(delta):
 
 
 func _on_hero_hit():
-	var icon = health_icons.pop_back()
-	icon.hide()
+	if len(health_icons) > 0:
+		var icon = health_icons.pop_back()
+		icon.hide()
 

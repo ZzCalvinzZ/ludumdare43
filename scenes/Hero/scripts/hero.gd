@@ -52,6 +52,5 @@ func set_motion(motion, next_idle):
 func _on_hero_area_entered(area):
 	if area.name.find('Enemy1') > -1:
 		emit_signal('hit')
-
-	sound_effects.stream = ouches[rand_range(0, len(ouches))]
-	sound_effects.play()
+		sound_effects.stream = ouches[rand_range(0, len(ouches))]
+		sound_effects.play()

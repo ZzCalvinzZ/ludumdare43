@@ -7,7 +7,10 @@ path="res://.import/black.png-e183e1c6c6b7b1c0974996e862a9d777.stex"
 [deps]
 
 source_file="res://scenes/World/black.png"
+source_md5="2782d1cf3db5b854aee820735043ae45"
+
 dest_files=[ "res://.import/black.png-e183e1c6c6b7b1c0974996e862a9d777.stex" ]
+dest_md5="943e252d21139672c23c4f30e8379deb"
 
 [params]
 

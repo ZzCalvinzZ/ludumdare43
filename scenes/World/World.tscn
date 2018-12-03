@@ -128,7 +128,6 @@ bus = "Master"
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "MainMusic"
@@ -143,5 +142,7 @@ _sections_unfolded = [ "Region", "Z Index" ]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
 [connection signal="hit" from="hero" to="." method="_on_hero_hit"]
+
+[connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
 
 

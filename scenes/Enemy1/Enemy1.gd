@@ -10,6 +10,7 @@ var state_machine
 var audio_stream
 
 var swing_sound = preload("res://scenes/Enemy1/Sound Effects/Swing.wav")
+var attack_zone = ''
 
 enum States {
 	Chase,
@@ -33,9 +34,12 @@ func update_target(new_target):
 	target = new_target
 
 func kill():
-	print('kill me')
 	self.hide()
-	Globals.enemies.remove(self)
+	self.set_process(false)
+	self.queue_free()
+	Globals.enemies.erase(self)
+	Globals.killable_enemies.erase(self)
+
 
 func chase():
 	state_machine.change_states(States.Chase)
@@ -44,3 +48,4 @@ func play_attack_sound():
 	audio_stream.stream = swing_sound
 	audio_stream.volume_db = 6
 	audio_stream.play()
+

@@ -41,6 +41,7 @@ func _process(delta):
 		set_animation('move_up')
 
 	motion = motion.normalized() * Globals.speed
+	Globals.player_attack_direction = next_idle.replace('idle_', '')
 	player.set_motion(motion, next_idle)
 
 	if motion.x == 0 && motion.y == 0:

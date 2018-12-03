@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 8.30748 )
 
-[node name="Enemy1" type="Area2D"]
+[node name="Enemy1" type="Area2D" index="0"]
 
 position = Vector2( 468.5, 243.5 )
 scale = Vector2( 1.14062, 1.07812 )
@@ -88,6 +88,10 @@ volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[connection signal="area_entered" from="." to="." method="_on_Enemy1_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_Enemy1_area_exited"]
 
 [connection signal="timeout" from="Attack/BackupTimer" to="Attack" method="_on_BackupTimer_timeout"]
 

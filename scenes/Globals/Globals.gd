@@ -1,7 +1,9 @@
 extends Node
 
 var selected_sacrifice
+var player_attack_direction
 var enemies = []
+var killable_enemies = []
 var health = null
 var speed = 250
 var light_scale = null
