@@ -277,7 +277,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 18.4378
 
-[node name="hero" type="Area2D" index="0"]
+[node name="hero" type="Area2D"]
 
 position = Vector2( 506.924, 282.291 )
 input_pickable = true

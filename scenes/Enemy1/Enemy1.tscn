@@ -251,7 +251,7 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
-[node name="Enemy1" type="Area2D"]
+[node name="Enemy1" type="Area2D" index="0"]
 
 position = Vector2( 468.5, 243.5 )
 scale = Vector2( 1.14062, 1.07812 )
@@ -283,7 +283,7 @@ _sections_unfolded = [ "Animation" ]
 
 script = ExtResource( 3 )
 MOVE_SPEED = 75
-ATTACK_DISTANCE = 100
+ATTACK_DISTANCE = 75
 
 [node name="Dead" type="Node" parent="." index="3"]
 

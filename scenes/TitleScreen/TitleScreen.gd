@@ -25,7 +25,7 @@ func _input(event):
 			Globals.health = 3
 
 		if Globals.selected_sacrifice == "Legs":
-			Globals.speed = 100
+			Globals.speed = 150
 
 		if Globals.selected_sacrifice == "Eyes":
 			Globals.light_scale = 1
