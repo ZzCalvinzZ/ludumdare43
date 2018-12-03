@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AxeHit3.wav-1061accf655271387e6bbc0a444159d1.sample"
+
+[deps]
+
+source_file="res://scenes/Hero/Sound Effects/AxeHit3.wav"
+source_md5="d49684d72cfbd162b54e36dc79ade59a"
+
+dest_files=[ "res://.import/AxeHit3.wav-1061accf655271387e6bbc0a444159d1.sample" ]
+dest_md5="cff96815ddca7e03f56a9650ace59ecc"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

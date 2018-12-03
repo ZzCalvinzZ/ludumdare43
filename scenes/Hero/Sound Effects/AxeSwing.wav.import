@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AxeSwing.wav-76a2b261e3a6b179fa8d763fa6dbdc43.sample"
+
+[deps]
+
+source_file="res://scenes/Hero/Sound Effects/AxeSwing.wav"
+source_md5="3f0594622fbcd731cc5dba44092e66b7"
+
+dest_files=[ "res://.import/AxeSwing.wav-76a2b261e3a6b179fa8d763fa6dbdc43.sample" ]
+dest_md5="a550466214a5728de967cac37704ca38"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
