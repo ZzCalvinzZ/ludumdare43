@@ -1,9 +1,9 @@
 extends "res://scripts/state.gd"
 
-var player
+var enemy
 
 func ready():
-	player = self._parent
+	enemy = self._parent
 	set_animation('death')
 
 func process(delta):

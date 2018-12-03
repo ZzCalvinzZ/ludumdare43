@@ -74,6 +74,9 @@ func _on_AttackTimer_timeout():
 	$PauseTimer.start()
 
 func _on_PauseTimer_timeout():
+	if !self.get_current_state() == enemy.States.Attack:
+		return
+
 	phase = null
 	self.change_state(enemy.States.Chase)
 

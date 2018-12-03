@@ -53,15 +53,14 @@ func set_motion(motion, next_idle):
 	self.motion = motion
 
 func _on_hero_area_entered(area):
-	if area.name.find('Enemy1') > -1:
+	if area.name.find('Enemy1') > -1 && area.States.Dead != area.state_machine._current_state:
 		emit_signal('hit')
 
-		state_machine.change_state(States.Dead)
-
-		if Globals.health <= 0:
+		if Globals.health == 0:
+			state_machine.change_state(States.Dead)
+			motion = Vector2()
 			sound_effects.stream = death
-
 			sound_effects.play()
-		else:
+		elif Globals.health > 0:
 			sound_effects.stream = ouches[rand_range(0, len(ouches))]
 			sound_effects.play()

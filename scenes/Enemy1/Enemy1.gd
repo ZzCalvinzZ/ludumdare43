@@ -15,6 +15,7 @@ var attack_zone = ''
 
 enum States {
 	Chase,
+	Dead,
 	Attack
 }
 
@@ -24,7 +25,8 @@ func _ready():
 
 	state_machine = StateMachine.new(self, States.Chase, animator, {
 		Chase: $Chase,
-		Attack: $Attack
+		Attack: $Attack,
+		Dead: $Dead
 	})
 
 func _process(delta):
@@ -35,16 +37,10 @@ func update_target(new_target):
 	target = new_target
 
 func kill():
-	self.hide()
+	state_machine.change_state(States.Dead)
 	self.set_process(false)
-	self.queue_free()
-	Globals.enemies.erase(self)
-	Globals.killable_enemies.erase(self)
 	Globals.kills += 1
 	Globals.music = 'modern'
-
-func chase():
-	state_machine.change_states(States.Chase)
 
 func play_attack_sound():
 	audio_stream.stream = swing_sound

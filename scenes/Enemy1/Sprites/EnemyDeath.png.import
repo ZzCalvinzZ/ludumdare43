@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Monster.png-edc4cd55c6fe0441bd9930888bbcf85a.stex"
+path="res://.import/EnemyDeath.png-9d4d178a8e9cf56ad6d652d52c6f5132.stex"
 
 [deps]
 
-source_file="res://scenes/Enemy1/Sprites/Monster.png"
-dest_files=[ "res://.import/Monster.png-edc4cd55c6fe0441bd9930888bbcf85a.stex" ]
+source_file="res://scenes/Enemy1/Sprites/EnemyDeath.png"
+dest_files=[ "res://.import/EnemyDeath.png-9d4d178a8e9cf56ad6d652d52c6f5132.stex" ]
 
 [params]
 
