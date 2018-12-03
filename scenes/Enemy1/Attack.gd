@@ -56,7 +56,7 @@ func _process(delta):
 					set_animation('move_up')
 
 		elif phase == Phases.Attacking:
-			enemy.motion = new_motion.normalized() * ATTACK_SPEED
+			enemy.motion = new_motion.normalized() * (ATTACK_SPEED + Globals.kills * 5)
 
 		elif phase == Phases.FinalPause:
 			set_animation(enemy.next_idle)

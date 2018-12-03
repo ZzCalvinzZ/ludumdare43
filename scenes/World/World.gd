@@ -69,19 +69,19 @@ func change_music(music_name):
 	Engine.time_scale = 0.2
 	$SlowDownTimer.start()
 	sound_effects.volume_db = -6
-	
+
 	if music_name == 'pixelated':
 		sound_effects.stream = fall_sound
 		sound_effects.play()
 	elif music_name == 'modern':
 		sound_effects.stream = rise_sound
 		sound_effects.play()
-		
+
 	music.stop()
-	
+
 	selected_music = music_name
 	Globals.music = music_name
-	
+
 
 func _on_DeathTimer_timeout():
 	Globals.reset()
@@ -90,7 +90,7 @@ func _on_DeathTimer_timeout():
 
 func _on_SlowDownTimer_timeout():
 	Engine.time_scale = 1
-	
+
 	var stream = musics[selected_music]
 	var position = music.get_playback_position()
 

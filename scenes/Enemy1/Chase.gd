@@ -39,7 +39,7 @@ func _process(delta):
 				set_animation('move_up')
 
 		if abs(dx) > ATTACK_DISTANCE || abs(dy) > ATTACK_DISTANCE:
-			enemy.motion = new_motion.normalized() * MOVE_SPEED
+			enemy.motion = new_motion.normalized() * (MOVE_SPEED + Globals.kills * 5)
 		else:
 			self.change_state(enemy.States.Attack)
 
