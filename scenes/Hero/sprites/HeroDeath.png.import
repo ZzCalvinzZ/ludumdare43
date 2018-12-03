@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hero_new.png-f22e68ba5956fcef6d8386d1a321ae4c.stex"
+path="res://.import/HeroDeath.png-5f86149cbcc27e63ad927d286d817ef0.stex"
 
 [deps]
 
-source_file="res://scenes/Hero/sprites/hero_new.png"
-dest_files=[ "res://.import/hero_new.png-f22e68ba5956fcef6d8386d1a321ae4c.stex" ]
+source_file="res://scenes/Hero/sprites/HeroDeath.png"
+dest_files=[ "res://.import/HeroDeath.png-5f86149cbcc27e63ad927d286d817ef0.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

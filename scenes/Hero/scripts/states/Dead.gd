@@ -1,10 +1,11 @@
 extends "res://scripts/state.gd"
 
 var player
+var dead = false
 
 func ready():
 	player = self._parent
-	set_animation(player.next_idle)
+	set_animation('death')
 
 func process(delta):
-	set_animation(player.next_idle)
+	set_animation('death')
