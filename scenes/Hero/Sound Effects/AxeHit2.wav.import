@@ -7,10 +7,7 @@ path="res://.import/AxeHit2.wav-b6dcbc48e67a5f19e04adcce5c49c884.sample"
 [deps]
 
 source_file="res://scenes/Hero/Sound Effects/AxeHit2.wav"
-source_md5="403f30c820243a8c1d599df05884f877"
-
 dest_files=[ "res://.import/AxeHit2.wav-b6dcbc48e67a5f19e04adcce5c49c884.sample" ]
-dest_md5="6c8c19a413881ae9f1c7d0dffd10ea40"
 
 [params]
 

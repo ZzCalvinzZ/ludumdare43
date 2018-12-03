@@ -33,12 +33,33 @@ func _process(delta):
 		var dy = initial_target_position.y - enemy.position.y
 		var new_motion = Vector2(dx, dy)
 
+
 		if phase == Phases.BackingUp:
 			enemy.motion = new_motion.rotated(PI).normalized() * BACKUP_SPEED
+
+			var plane = 'leftright' if abs(dx) > abs(dy) else 'updown'
+			var dir
+
+			if plane == 'leftright':
+				if dx > 0:
+					enemy.next_idle = 'idle_right'
+					set_animation('move_right')
+				else:
+					enemy.next_idle = 'idle_left'
+					set_animation('move_left')
+			else:
+				if dy > 0:
+					enemy.next_idle = 'idle_down'
+					set_animation('move_down')
+				else:
+					enemy.next_idle = 'idle_up'
+					set_animation('move_up')
+
 		elif phase == Phases.Attacking:
 			enemy.motion = new_motion.normalized() * ATTACK_SPEED
+
 		elif phase == Phases.FinalPause:
-			pass
+			set_animation(enemy.next_idle)
 
 func process(delta):
 	pass

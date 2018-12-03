@@ -9,6 +9,7 @@ var speed = 250
 var light_scale = null
 var music = 'pixelated'
 var game_over = false
+var kills = 0
 
 func reset():
 	selected_sacrifice = null
@@ -19,6 +20,7 @@ func reset():
 	speed = 250
 	light_scale = null
 	game_over = false
+	kills = 0
 
 
 func _ready():

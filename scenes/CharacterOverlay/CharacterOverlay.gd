@@ -14,6 +14,9 @@ func _ready():
 	}
 
 func _process(delta):
+
+	find_node('ScoreLabel').text = str(Globals.kills)
+
 	if Globals.health != null && !setup_complete:
 		for i in range(1, Globals.health + 1):
 			var icon = $Health.get_node("HealthSprite" + str(i))

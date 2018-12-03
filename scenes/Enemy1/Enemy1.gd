@@ -8,6 +8,7 @@ var target
 var animator
 var state_machine
 var audio_stream
+var next_idle
 
 var swing_sound = preload("res://scenes/Enemy1/Sound Effects/Swing.wav")
 var attack_zone = ''
@@ -39,11 +40,12 @@ func kill():
 	self.queue_free()
 	Globals.enemies.erase(self)
 	Globals.killable_enemies.erase(self)
+	Globals.kills += 1
 	Globals.music = 'modern'
 
 func chase():
 	state_machine.change_states(States.Chase)
-	
+
 func play_attack_sound():
 	audio_stream.stream = swing_sound
 	audio_stream.volume_db = 6

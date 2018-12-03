@@ -7,10 +7,7 @@ path="res://.import/Rise.wav-7d6a7fa1e65bb22dd8255c85a0396b5e.sample"
 [deps]
 
 source_file="res://scenes/World/Sound Effects/Rise.wav"
-source_md5="a6fb3a587a6241819e5f5e2d7cbb545e"
-
 dest_files=[ "res://.import/Rise.wav-7d6a7fa1e65bb22dd8255c85a0396b5e.sample" ]
-dest_md5="fdeeb2cdb3cd046438b1ca4a62c9ef99"
 
 [params]
 
