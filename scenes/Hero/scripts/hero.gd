@@ -54,7 +54,7 @@ func _on_hero_area_entered(area):
 	if area.name.find('Enemy1') > -1:
 		emit_signal('hit')
 		
-		if Globals.health <= 1:
+		if Globals.health <= 0:
 			sound_effects.stream = death
 			sound_effects.play()
 		else:

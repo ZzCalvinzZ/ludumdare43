@@ -7,7 +7,7 @@ var killable_enemies = []
 var health = null
 var speed = 250
 var light_scale = null
-var music = null
+var music = 'pixelated'
 var game_over = false
 
 func reset():

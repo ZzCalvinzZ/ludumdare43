@@ -7,9 +7,11 @@ var hero
 
 var sound_effects
 var music
-var selected_music
+var selected_music = 'pixelated'
 
 var start_game_sound = preload("res://scenes/TitleScreen/Sound Effects/StartGame.wav")
+var rise_sound = preload("res://scenes/World/Sound Effects/Rise.wav")
+var fall_sound = preload("res://scenes/World/Sound Effects/Fall.wav")
 
 var musics = {
 	'modern': preload("res://scenes/World/Music/MainGameModern.ogg"),
@@ -24,7 +26,8 @@ func _ready():
 	sound_effects.play()
 
 	music = get_node("MusicPlayer")
-	self.change_music('pixelated')
+	music.stream = musics['pixelated']
+	music.play()
 
 	randomize()
 	$SpawnTimer.start()
@@ -63,21 +66,41 @@ func _on_hero_hit():
 		$DeathTimer.start()
 
 func change_music(music_name):
+	Engine.time_scale = 0.2
+	$SlowDownTimer.start()
+	sound_effects.volume_db = -6
+	
+	if music_name == 'pixelated':
+		sound_effects.stream = fall_sound
+		sound_effects.play()
+	elif music_name == 'modern':
+		sound_effects.stream = rise_sound
+		sound_effects.play()
+		
+	music.stop()
+	
 	selected_music = music_name
 	Globals.music = music_name
-	var stream = musics[music_name]
-	var position = music.get_playback_position()
-
-	if stream == musics['pixelated']:
-		AudioServer.set_bus_effect_enabled(2, 0, true)
-	else:
-		AudioServer.set_bus_effect_enabled(2, 0, false)
-
-	music.stream = stream
-	music.play()
-	music.seek(position)
+	
 
 func _on_DeathTimer_timeout():
 	Globals.reset()
 	get_tree().change_scene("res://scenes/TitleScreen/TitleScreen.tscn")
 
+
+func _on_SlowDownTimer_timeout():
+	Engine.time_scale = 1
+	
+	var stream = musics[selected_music]
+	var position = music.get_playback_position()
+
+	if stream == musics['pixelated']:
+		AudioServer.set_bus_effect_enabled(2, 0, true)
+		music.volume_db = 0
+	else:
+		AudioServer.set_bus_effect_enabled(2, 0, false)
+		music.volume_db = 3
+
+	music.stream = stream
+	music.play()
+	music.seek(position)
