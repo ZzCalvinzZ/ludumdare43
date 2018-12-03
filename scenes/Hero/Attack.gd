@@ -10,7 +10,7 @@ var axe_hits = [
 	preload("res://scenes/Hero/Sound Effects/AxeHit1.wav"),
 	preload("res://scenes/Hero/Sound Effects/AxeHit2.wav"),
 	preload("res://scenes/Hero/Sound Effects/AxeHit3.wav"),
-	preload("res://scenes/Hero/Sound Effects/AxeHit4.wav")	
+	preload("res://scenes/Hero/Sound Effects/AxeHit4.wav")
 ]
 
 func ready():
@@ -20,18 +20,19 @@ func ready():
 
 func _process(delta):
 	if (Input.is_action_just_pressed('start') &&
-		self.get_current_state() != player.States.Attack):
+		self.get_current_state() != player.States.Attack &&
+		self.get_current_state() != player.States.Dead):
 
 		change_state(player.States.Attack)
 		$AttackTimer.start()
-		
+
 		if Globals.killable_enemies:
 			sound_effects.stream = axe_hits[rand_range(0, len(axe_hits))]
 			sound_effects.play()
 		else:
 			sound_effects.stream = attack_sound
 			sound_effects.play()
-		
+
 		for enemy in Globals.killable_enemies:
 			enemy.kill()
 

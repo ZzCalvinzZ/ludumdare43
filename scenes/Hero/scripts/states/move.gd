@@ -10,6 +10,9 @@ func ready():
 
 
 func _process(delta):
+	if (self.get_current_state() == player.States.Dead):
+		return
+
 	if (Input.is_action_pressed('up') ||
 		Input.is_action_pressed('right') ||
 		Input.is_action_pressed('down') ||

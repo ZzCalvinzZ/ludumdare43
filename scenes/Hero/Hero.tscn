@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/Hero/scripts/hero.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Hero/sprites/hero_new.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Hero/scripts/states/move.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Hero/scripts/states/idle.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Hero/AttackArea.gd" type="Script" id=5]
-[ext_resource path="res://scenes/Hero/Attack.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Hero/scripts/states/Dead.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Hero/AttackArea.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Hero/Attack.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -184,7 +185,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 18.4378
 
-[node name="hero" type="Area2D"]
+[node name="hero" type="Area2D" index="0"]
 
 position = Vector2( 506.924, 282.291 )
 input_pickable = true
@@ -240,7 +241,11 @@ script = ExtResource( 3 )
 
 script = ExtResource( 4 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="Dead" type="Node" parent="." index="5"]
+
+script = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
 
 stream = null
 volume_db = 0.0
@@ -249,7 +254,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AttackRight" type="Area2D" parent="." index="6"]
+[node name="AttackRight" type="Area2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( -1.444, 0 )
@@ -261,7 +266,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackRight" index="0"]
@@ -271,7 +276,7 @@ rotation = 1.5708
 scale = Vector2( 0.996912, 1.00349 )
 shape = SubResource( 10 )
 
-[node name="AttackDown" type="Area2D" parent="." index="7"]
+[node name="AttackDown" type="Area2D" parent="." index="8"]
 
 editor/display_folded = true
 input_pickable = true
@@ -281,7 +286,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AttackDown" index="0"]
@@ -290,7 +295,7 @@ position = Vector2( -1.14644, 34.39 )
 scale = Vector2( 0.990911, 0.836609 )
 shape = SubResource( 11 )
 
-[node name="AttackUp" type="Area2D" parent="." index="8"]
+[node name="AttackUp" type="Area2D" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( -0.717285, 1.66702 )
@@ -301,7 +306,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AttackUp" index="0"]
@@ -310,7 +315,7 @@ position = Vector2( -1.10941, -35.579 )
 scale = Vector2( 0.95383, 0.893361 )
 shape = SubResource( 12 )
 
-[node name="AttackLeft" type="Area2D" parent="." index="9"]
+[node name="AttackLeft" type="Area2D" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( -24.276, 0.797028 )
@@ -322,7 +327,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="AttackLeft" index="0"]
@@ -333,9 +338,9 @@ scale = Vector2( 2.54545, 2.48827 )
 shape = SubResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Attack" type="Node" parent="." index="10"]
+[node name="Attack" type="Node" parent="." index="11"]
 
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="AttackTimer" type="Timer" parent="Attack" index="0"]
 

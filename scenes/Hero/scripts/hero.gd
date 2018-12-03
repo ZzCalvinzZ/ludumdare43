@@ -27,6 +27,7 @@ enum States {
 	Idle,
 	Move,
 	Attack,
+	Dead,
 }
 
 func _ready():
@@ -37,6 +38,7 @@ func _ready():
 		Idle: get_node('Idle'),
 		Move: get_node('Move'),
 		Attack: get_node('Attack'),
+		Dead: get_node('Dead'),
 	})
 
 	sprite = find_node("Sprite")
@@ -53,9 +55,12 @@ func set_motion(motion, next_idle):
 func _on_hero_area_entered(area):
 	if area.name.find('Enemy1') > -1:
 		emit_signal('hit')
-		
+
+		state_machine.change_state(States.Dead)
+
 		if Globals.health <= 0:
 			sound_effects.stream = death
+
 			sound_effects.play()
 		else:
 			sound_effects.stream = ouches[rand_range(0, len(ouches))]
