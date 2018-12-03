@@ -7,7 +7,10 @@ path="res://.import/Fall.wav-eb2a709b17dc2ce59a8c3bca55ff23c7.sample"
 [deps]
 
 source_file="res://scenes/World/Sound Effects/Fall.wav"
+source_md5="b1aaa3c9ceb38a5356ce893fd02bf347"
+
 dest_files=[ "res://.import/Fall.wav-eb2a709b17dc2ce59a8c3bca55ff23c7.sample" ]
+dest_md5="351b97c5e3ace48ffa3ca9dc4ea79c31"
 
 [params]
 

@@ -79,5 +79,15 @@ func _process(delta):
 
 
 func select_sacrifice():
+	var text = $ItemInfo.text
 	sound_effects.stream = select_sacrifice_sound
 	sound_effects.play()
+	
+	if highlighted_sacrifice == 0:
+		text = 'Your chest feels empty, and your pulse is weak. I doubt you have long to live.'
+	elif highlighted_sacrifice == 1:
+		text = 'You try to stand, but falter. How will you escape this nightmare without feet?'
+	elif highlighted_sacrifice == 2:
+		text = 'All you see if blackness. Could this place really be that dark? You will have to wait and SEE.'
+		
+	$ItemInfo.text = text

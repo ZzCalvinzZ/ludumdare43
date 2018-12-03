@@ -7,7 +7,10 @@ path="res://.import/Monster.png-edc4cd55c6fe0441bd9930888bbcf85a.stex"
 [deps]
 
 source_file="res://scenes/Enemy1/Sprites/Monster.png"
+source_md5="6354a7c261fe2d76de48e58044b5bf07"
+
 dest_files=[ "res://.import/Monster.png-edc4cd55c6fe0441bd9930888bbcf85a.stex" ]
+dest_md5="c3bb05a5647ffde32814df64b8898295"
 
 [params]
 

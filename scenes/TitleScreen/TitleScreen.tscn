@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.519333 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="TitleScreen" type="Node"]
+[node name="TitleScreen" type="Node" index="0"]
 
 script = ExtResource( 1 )
 cutoff_multiplier = 50
@@ -44,7 +44,6 @@ margin_top = -65.0
 margin_right = 1097.0
 margin_bottom = 682.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -53,17 +52,17 @@ color = Color( 0.116455, 0.120798, 0.140625, 1 )
 
 [node name="Press to Start" type="Label" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 3.0
-margin_top = -83.0
-margin_right = 2048.0
-margin_bottom = 1118.0
+margin_left = 1.0
+margin_top = 67.0
+margin_right = 2046.0
+margin_bottom = 806.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -88,28 +87,77 @@ playback_speed = 1.0
 anims/pulse = SubResource( 1 )
 blend_times = [  ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="Backstory" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 62.0
+margin_right = 3022.0
+margin_bottom = 476.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Uhhh... What the hell happened? How did you even get here? The slow, collective groaning of some unknown horror settles, most unwelcome in the room. To make matters worse, something about your body doesn't feel right..."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = -0.0052356
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
+
+[node name="ItemInfo" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 448.0
+margin_right = 2409.0
+margin_bottom = 619.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Your chest feels empty, and your pulse is weak. I doubt you have long to live."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "TitleScreen"
 
-[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." index="3"]
+[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = null
 volume_db = -14.4
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Sacrifices" type="Node2D" parent="." index="4"]
+[node name="Sacrifices" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-position = Vector2( 2.70752, -55.9552 )
+position = Vector2( 0.902375, -31.5876 )
 
 [node name="Heart" parent="Sacrifices" index="0" instance=ExtResource( 4 )]
 
@@ -130,7 +178,6 @@ margin_right = 154.0
 margin_bottom = 62.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -141,10 +188,13 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D" type="Light2D" parent="Sacrifices/Heart" index="2"]
 
-position = Vector2( 0.902588, 10.8301 )
+position = Vector2( 1.80518, 9.92763 )
 enabled = true
 editor_only = false
 texture = ExtResource( 6 )
@@ -166,6 +216,9 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Legs" parent="Sacrifices" index="1" instance=ExtResource( 7 )]
 
@@ -186,7 +239,6 @@ margin_right = 122.01
 margin_bottom = 62.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -197,10 +249,13 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D" type="Light2D" parent="Sacrifices/Legs" index="2"]
 
-position = Vector2( -0.0626221, 11.2616 )
+position = Vector2( 0.839966, 10.3591 )
 enabled = true
 editor_only = false
 texture = ExtResource( 6 )
@@ -222,6 +277,9 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Eyes" parent="Sacrifices" index="2" instance=ExtResource( 8 )]
 
@@ -242,7 +300,6 @@ margin_right = 123.0
 margin_bottom = 55.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -253,10 +310,13 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D" type="Light2D" parent="Sacrifices/Eyes" index="2"]
 
-position = Vector2( 1.30383, 11.2616 )
+position = Vector2( 2.20642, 11.2616 )
 enabled = true
 editor_only = false
 texture = ExtResource( 6 )
@@ -278,5 +338,8 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 
