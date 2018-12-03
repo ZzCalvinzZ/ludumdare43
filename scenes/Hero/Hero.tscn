@@ -184,7 +184,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 18.4378
 
-[node name="hero" type="Area2D"]
+[node name="hero" type="Area2D" index="0"]
 
 position = Vector2( 506.924, 282.291 )
 input_pickable = true
@@ -342,6 +342,14 @@ process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
+
+[node name="AttackAudioPlayer" type="AudioStreamPlayer" parent="Attack" index="1"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_entered" from="." to="." method="_on_hero_area_entered"]
 

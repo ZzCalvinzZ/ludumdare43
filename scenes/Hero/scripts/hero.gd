@@ -19,6 +19,7 @@ var ouches = [
 	preload("res://scenes/Hero/Sound Effects/Ouch4.wav"),
 	preload("res://scenes/Hero/Sound Effects/Ouch5.wav")
 ]
+var death = preload("res://scenes/Hero/Sound Effects/Death.wav")
 
 var state_machine
 
@@ -52,5 +53,10 @@ func set_motion(motion, next_idle):
 func _on_hero_area_entered(area):
 	if area.name.find('Enemy1') > -1:
 		emit_signal('hit')
-		sound_effects.stream = ouches[rand_range(0, len(ouches))]
-		sound_effects.play()
+		
+		if Globals.health <= 1:
+			sound_effects.stream = death
+			sound_effects.play()
+		else:
+			sound_effects.stream = ouches[rand_range(0, len(ouches))]
+			sound_effects.play()
