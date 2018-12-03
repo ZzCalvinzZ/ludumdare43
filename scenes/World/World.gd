@@ -1,6 +1,7 @@
 extends Node
 
 export (PackedScene) var Enemy1
+export (PackedScene) var Death
 
 var hero
 
@@ -33,12 +34,11 @@ func _process(delta):
 
 	if !light_processed && Globals.light_scale != null:
 		var light = find_node('HeroLight')
-		print(light.scale)
 		light.scale = Vector2(1,1)
 
 	for enemy in Globals.enemies:
 		enemy.update_target(hero)
-		
+
 	if Globals.music != selected_music:
 		self.change_music(Globals.music)
 
@@ -55,6 +55,12 @@ func _on_SpawnTimer_timeout():
 func _on_hero_hit():
 	Globals.health -= 1
 	Globals.music = 'pixelated'
+	if Globals.health == 0:
+		Globals.game_over = true
+		var death = Death.instance()
+		death.z_index = 10
+		add_child(death)
+		$DeathTimer.start()
 
 func change_music(music_name):
 	selected_music = music_name
@@ -70,4 +76,8 @@ func change_music(music_name):
 	music.stream = stream
 	music.play()
 	music.seek(position)
+
+func _on_DeathTimer_timeout():
+	Globals.reset()
+	get_tree().change_scene("res://scenes/TitleScreen/TitleScreen.tscn")
 

@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy1/Enemy1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Hero/Hero.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/World/light_mask.png" type="Texture" id=4]
-[ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/World/white.png" type="Texture" id=6]
-[ext_resource path="res://scenes/World/black.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Death/Death.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Hero/Hero.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/World/light_mask.png" type="Texture" id=5]
+[ext_resource path="res://scenes/CharacterOverlay/CharacterOverlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/World/white.png" type="Texture" id=7]
+[ext_resource path="res://scenes/World/black.png" type="Texture" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -19,6 +20,7 @@ _data = {
 
 script = ExtResource( 1 )
 Enemy1 = ExtResource( 2 )
+Death = ExtResource( 3 )
 
 [node name="EnemyPath" type="Path2D" parent="." index="0"]
 
@@ -28,7 +30,7 @@ curve = SubResource( 1 )
 [node name="EnemySpawn" type="PathFollow2D" parent="EnemyPath" index="0"]
 
 position = Vector2( 31.3197, 34.677 )
-rotation = 0.0028523
+rotation = 0.00285327
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -45,7 +47,7 @@ one_shot = false
 autostart = false
 _sections_unfolded = [ "Pause" ]
 
-[node name="hero" parent="." index="2" instance=ExtResource( 3 )]
+[node name="hero" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 506.924, 284.291 )
 
@@ -59,7 +61,7 @@ position = Vector2( -0.621858, 0.418052 )
 scale = Vector2( 2.74375, 2.68536 )
 enabled = true
 editor_only = false
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -80,7 +82,7 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Transform" ]
 
-[node name="CharacterOverlay" parent="." index="3" instance=ExtResource( 5 )]
+[node name="CharacterOverlay" parent="." index="3" instance=ExtResource( 6 )]
 
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
@@ -90,7 +92,7 @@ position = Vector2( 554.705, 316.554 )
 scale = Vector2( 35.669, 19.6939 )
 enabled = true
 editor_only = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -115,6 +117,7 @@ _sections_unfolded = [ "Range", "Transform" ]
 
 stream = null
 volume_db = 5.53
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -123,6 +126,7 @@ bus = "Master"
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "MainMusic"
@@ -131,13 +135,22 @@ bus = "MainMusic"
 
 scale = Vector2( 1044.97, 624.504 )
 z_index = -10
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="DeathTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 7.0
+one_shot = true
+autostart = false
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
 [connection signal="hit" from="hero" to="CharacterOverlay" method="_on_hero_hit"]
 
 [connection signal="hit" from="hero" to="." method="_on_hero_hit"]
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 
 
