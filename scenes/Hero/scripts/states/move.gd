@@ -10,7 +10,8 @@ func ready():
 
 
 func _process(delta):
-	if (self.get_current_state() == player.States.Dead):
+	if (self.get_current_state() == player.States.Dead ||
+		self.get_current_state() == player.States.Attack):
 		return
 
 	if (Input.is_action_pressed('up') ||

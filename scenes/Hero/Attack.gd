@@ -23,6 +23,9 @@ func _process(delta):
 		self.get_current_state() != player.States.Attack &&
 		self.get_current_state() != player.States.Dead):
 
+		player.motion = Vector2()
+		set_animation('attack_' + Globals.player_attack_direction)
+
 		change_state(player.States.Attack)
 		$AttackTimer.start()
 
@@ -41,5 +44,8 @@ func process(delta):
 	pass
 
 func _on_AttackTimer_timeout():
+	if self.get_current_state() == player.States.Dead:
+		return
+
 	Globals.player_attack_direction = ''
 	change_state(player.States.Idle)
